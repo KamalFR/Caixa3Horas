@@ -1,0 +1,68 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Caixa : PersonagemManeger
+{
+    [SerializeField] private GameObject gatoCaixa;
+    [SerializeField] private GameObject goblim;
+    [SerializeField] private GameObject dragon;
+    [SerializeField] private GameObject aumentoDano;
+    [SerializeField] private GameObject aumentoVida;
+    private GameObject selected;
+    private int aux;
+    private float time;
+    void Start()
+    {
+        aux = Random.Range(0, 3);
+        if(aux == 0)
+        {
+            selected = aumentoVida;
+        }
+        if (aux == 1)
+        {
+            selected = aumentoDano;
+        }
+        if (aux >= 2)
+        {
+            SelectInimigo();
+        }
+        inimigo = GameObject.FindGameObjectWithTag("Player").GetComponent<PersonagemManeger>();
+        time = 0f;
+    }
+    void Update()
+    {
+        if(LutaControle.turno == TurnoControle.TurnoInimigo)
+        {
+            time += Time.time;
+            if (time > 1.5f)
+            {
+                LutaControle.turno = TurnoControle.TurnoPlayer;
+                time = 0f;
+            }
+        }
+    }
+    public override void Morrer()
+    {
+        GameObject set = Instantiate(selected);
+        inimigo.SetNewInimigo(set);
+        Destroy(gameObject);
+        LutaControle.caixasDestruidas++;
+    }
+    public void SelectInimigo()
+    {
+        aux = Random.Range(0, 2);
+        if( aux == 0)
+        {
+            selected = gatoCaixa;
+        }
+        if(aux == 1)
+        {
+            selected = goblim;
+        }
+        if(aux >= 2)
+        {
+            selected = dragon;
+        }
+    }
+}
