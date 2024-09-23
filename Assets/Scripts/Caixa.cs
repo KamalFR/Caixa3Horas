@@ -46,8 +46,13 @@ public class Caixa : PersonagemManeger
     }
     public override void Morrer()
     {
-        if(aux >= 2)enemyAudio.Play();
+        if (aux >= 2)
+        {
+            enemyAudio.Play();
+        }
 
+        LutaControle.turno = TurnoControle.TurnoPlayer;
+        Player.attacked = false;
         GameObject set = Instantiate(selected, transform.position, transform.rotation);
         inimigo.SetNewInimigo(set);
         Destroy(gameObject);

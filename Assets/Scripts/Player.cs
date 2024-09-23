@@ -24,15 +24,15 @@ public class Player : PersonagemManeger
             if (LutaControle.turno == TurnoControle.TurnoPlayer)
             {
                 AudioManager.instance.atackAudio.Play();
-                Atacar();
                 attacked = true;
                 button.interactable = false;
+                Atacar();
             }
         }
     }
     public override void Morrer()
     {
-        //cena de morte
+        SceneManager.LoadScene("TelaMorte");
     }
     private void Update()
     {
