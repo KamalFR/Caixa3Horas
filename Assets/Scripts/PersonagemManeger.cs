@@ -15,7 +15,7 @@ public abstract class PersonagemManeger : MonoBehaviour
     public abstract void Morrer();
     public void ReceberDano(int dano)
     {
-        vida -= dano + Random.Range(0, dano);
+        vida -= dano + Random.Range(0, dano/2);
         if (vida <= 0)
         {
             Morrer();

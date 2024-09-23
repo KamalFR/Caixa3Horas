@@ -29,7 +29,7 @@ public class AumentarDano : PersonagemManeger
         AudioManager.instance.buffAudio.Play();
 
         inimigo.dano += aumentoDano;
-        GameObject set = Instantiate(caixa);
+        GameObject set = Instantiate(caixa, transform.position, Quaternion.identity);
         inimigo.SetNewInimigo(set);
         Destroy(gameObject);
     }

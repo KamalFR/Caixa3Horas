@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Caixa : PersonagemManeger
 {
-    [SerializeField] private AudioSource enemyAudio;
+    private AudioSource enemyAudio;
 
     [SerializeField] private GameObject gatoCaixa;
     [SerializeField] private GameObject goblim;
@@ -16,7 +16,7 @@ public class Caixa : PersonagemManeger
     private float time;
     void Start()
     {
-        aux = Random.Range(0, 3);
+        aux = Random.Range(0, 4);
         if(aux == 0)
         {
             selected = aumentoVida;
@@ -55,7 +55,7 @@ public class Caixa : PersonagemManeger
     }
     public void SelectInimigo()
     {
-        int aux2 = Random.Range(0, 2);
+        int aux2 = Random.Range(0, 3);
         if( aux2 == 0)
         {
             selected = gatoCaixa;

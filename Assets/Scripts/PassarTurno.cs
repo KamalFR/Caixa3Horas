@@ -7,5 +7,6 @@ public class PassarTurno : MonoBehaviour
     public void Passar_Turno()
     {
         LutaControle.turno = TurnoControle.TurnoInimigo;
+        Player.attacked = false;
     } 
 }

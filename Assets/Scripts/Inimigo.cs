@@ -5,6 +5,8 @@ using UnityEngine;
 public class Inimigo : PersonagemManeger
 {
     [SerializeField] private GameObject caixa;
+    [SerializeField] private int multiplicadorAumentoVida;
+    [SerializeField] private int multiplicadorAumentoDano;
     private float time;
     void Start()
     {
@@ -29,13 +31,13 @@ public class Inimigo : PersonagemManeger
     }
     public override void Morrer()
     {
-        GameObject set = Instantiate(caixa);
+        GameObject set = Instantiate(caixa, transform.position, Quaternion.identity);
         inimigo.SetNewInimigo(set);
         Destroy(gameObject);
     }
     public void AumentarForca()
     {
-        vida += (LutaControle.caixasDestruidas / 2) * vida;
-        dano += (LutaControle.caixasDestruidas / 2) * dano;
+        vida += (LutaControle.caixasDestruidas / multiplicadorAumentoVida) * vida;
+        dano += (LutaControle.caixasDestruidas / multiplicadorAumentoDano) * dano;
     }
 }

@@ -29,7 +29,7 @@ public class AumentarVida : PersonagemManeger
         AudioManager.instance.buffAudio.Play();
 
         inimigo.vida += aumentoVida;
-        GameObject set = Instantiate(caixa);
+        GameObject set = Instantiate(caixa, transform.position, Quaternion.identity);
         inimigo.SetNewInimigo(set);
         Destroy(gameObject);
     }

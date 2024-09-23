@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1968508449, guid: 9209cacc203aff340b4e4a88553d9871, type: 3}
+  m_Sprite: {fileID: -864347752, guid: 9209cacc203aff340b4e4a88553d9871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,5 +99,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 1
   dano: 0
-  aumentoDano: 1
+  aumentoDano: 2
   caixa: {fileID: 8857788564070452021, guid: 1e80258a7d1493c469466ae8325b62a5, type: 3}
