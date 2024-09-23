@@ -26,6 +26,8 @@ public class AumentarVida : PersonagemManeger
     }
     public override void Morrer()
     {
+        AudioManager.instance.buffAudio.Play();
+
         inimigo.vida += aumentoVida;
         GameObject set = Instantiate(caixa);
         inimigo.SetNewInimigo(set);

@@ -19,6 +19,8 @@ public class Inimigo : PersonagemManeger
             time += Time.time;
             if(time > 1.5f)
             {
+                AudioManager.instance.danoAudio.Play();
+
                 Atacar();
                 LutaControle.turno = TurnoControle.TurnoPlayer;
                 time = 0f;

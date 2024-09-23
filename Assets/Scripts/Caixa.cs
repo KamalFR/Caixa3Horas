@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Caixa : PersonagemManeger
 {
+    [SerializeField] private AudioSource enemyAudio;
+
     [SerializeField] private GameObject gatoCaixa;
     [SerializeField] private GameObject goblim;
     [SerializeField] private GameObject dragon;
@@ -44,24 +46,29 @@ public class Caixa : PersonagemManeger
     }
     public override void Morrer()
     {
-        GameObject set = Instantiate(selected);
+        if(aux >= 2)enemyAudio.Play();
+
+        GameObject set = Instantiate(selected, transform.position, transform.rotation);
         inimigo.SetNewInimigo(set);
         Destroy(gameObject);
         LutaControle.caixasDestruidas++;
     }
     public void SelectInimigo()
     {
-        aux = Random.Range(0, 2);
-        if( aux == 0)
+        int aux2 = Random.Range(0, 2);
+        if( aux2 == 0)
         {
             selected = gatoCaixa;
+            enemyAudio = AudioManager.instance.caixinhaAudio;
         }
-        if(aux == 1)
+        if(aux2 == 1)
         {
+            enemyAudio = AudioManager.instance.goblinAudio;
             selected = goblim;
         }
-        if(aux >= 2)
+        if(aux2 >= 2)
         {
+            enemyAudio = AudioManager.instance.dragonAudio;
             selected = dragon;
         }
     }

@@ -20,6 +20,7 @@ public class Player : PersonagemManeger
         {
             if (LutaControle.turno == TurnoControle.TurnoPlayer)
             {
+                AudioManager.instance.atackAudio.Play();
                 Atacar();
                 attacked = true;
             }

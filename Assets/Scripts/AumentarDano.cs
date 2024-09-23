@@ -26,6 +26,8 @@ public class AumentarDano : PersonagemManeger
     }
     public override void Morrer()
     {
+        AudioManager.instance.buffAudio.Play();
+
         inimigo.dano += aumentoDano;
         GameObject set = Instantiate(caixa);
         inimigo.SetNewInimigo(set);
