@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 4
-  dano: 2
+  dano: 1
   caixa: {fileID: 8857788564070452021, guid: 1e80258a7d1493c469466ae8325b62a5, type: 3}
-  multiplicadorAumentoVida: 5
-  multiplicadorAumentoDano: 5
+  multiplicadorAumentoVida: 7
+  multiplicadorAumentoDano: 7
